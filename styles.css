@@ -383,9 +383,7 @@ nav{
     margin: 20px 5%;
     position: relative;
   }
-  .images li:hover{
-    top: -4px;
-  }
+
   .images li img{
     max-width: 100%;
   }
@@ -405,13 +403,6 @@ nav{
     border-radius: 28px;
     border: 4px solid white;
   }
-  form input:focus{
-    border: 4px dashed #4B4B4B;
-    outline: none;
-  }
-  form input:valid{
-    border: 4px solid #71d300;
-  }
   footer{
     background: #F63232;
     color: white;
@@ -424,7 +415,60 @@ nav{
 There you go. At least you know how to read the stylesheet, or even apply them in
 your own website.
 
-Next would be the responses.
+Next would be the pseudo classes.
+
+*/
+
+.images li:hover{
+  top: -4px;
+}
+
+/*
+
+We're selecting all images having <li> tags. We added the ":hover" for this one.
+
+The purpose of ":hover" is that when the mouse cursor points or hovers to that selected
+image, it should show some effects based on its property. We notice that
+one of the images, when pointed, lifts up for a by, by -4px.
+
+
+Examples below, if you click the input box just at the bottom of the page,
+we get a dashed border. It is only applicable when the text input is at focus,
+thus the name itself being ":focus".
+
+If the contnets are valid, the look of the input box change. This is achievable with the
+":valid" pseudo class.
+
+*/
+
+
+form input:focus{
+  border: 4px dashed #4B4B4B;
+  outline: none;
+}
+
+
+form input:valid{
+  border: 4px solid #71d300;
+}
+
+/*
+
+Media Queries for responsive design
+
+Viewports: say a big viewport like tablet and monitor screens, small ones are phones screens.
+
+Media Queries: Tells the browser how to style an element at particular viewport dimensions
+
+Viewport Meta Tag: Tells the browser what width the viewport should be.
+Note that this is essential when it comes to the MobileFirst approach.
+Add a Viewport Meta tag like the ones on index.html's line 3.
+This tag allows you to let elements adapt based on the viewport you are using.
+
+Resonponsive images: Only load smalelr images for mobile devices.
+
+So basically, what we are doing here is that we need to adapt the sizes of most of
+the elements in order to create a user-friendly looking website, fit for all devices.
 
 */
 
@@ -435,6 +479,18 @@ Next would be the responses.
     }
   
   }
+
+  /*
+  The example above shows the "@media" query, then type in "screen", pointing out to any screen
+  your screen included.
+
+  Within the parenthesis, we got the "max-width: 1400px"
+  We apply the properties for each selected element once the screen size go less than the max-width.
+  Think of each media query like a css file within a css file, depending on the screen size.
+
+  Same applies to examples below.
+
+  */
   
   @media screen and (max-width: 960px){
   
